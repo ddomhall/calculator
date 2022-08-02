@@ -1,24 +1,88 @@
 * {
-	max-width: 500px;
-	margin: auto;
-	padding: 0;
 	box-sizing: border-box;
-	border: 1px solid;
+	outline: 1px solid;
+}
+
+html {
+	height: 100vh;
+}
+
+body {
+	width: 200px;
+	margin: 0 auto;
 }
 
 .screen {
-	height: 100px;
+	height: 50px;
 }
 
 .operators {
 	display: grid;
-	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .operator {
+	height: 50px;
+	font-size: 50px;
 	line-height: 50px;
 	text-align: center;
+}
+
+.star {
+	line-height: 67px;
+}
+
+.minus {
+	line-height: 40px;
+}
+
+.others {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 150px 50px;
+}
+
+.numbers {
+	display: grid;
+	grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.number {
+	height: 50px;
 	font-size: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.bottom-row {
+	display: grid;
+	grid-template-columns: auto 50px;
+}
+
+.zero {
+	grid-area: 4 / 1 / 4 / 3;
+}
+
+.dot {
+	grid-column-start: 3;
+}
+
+.commands {
+	width: 50px;
+}
+
+.command {
 	width: 100%;
 	height: 50px;
+	font-size: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.AC {
+	font-size: 30px;
+}
+.equals {
+	height: 100px;
+	line-height: 100px;
 }
