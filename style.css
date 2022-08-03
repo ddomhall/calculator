@@ -13,8 +13,12 @@ body {
 }
 
 .screen {
-	height: 50px;
+	height: 75px;
+	font-size: 50px;
+	overflow: auto;
 }
+
+/* operators */
 
 .operators {
 	display: grid;
@@ -36,15 +40,18 @@ body {
 	line-height: 40px;
 }
 
+/* others */
+
 .others {
-	margin: 0;
 	display: grid;
 	grid-template-columns: 150px 50px;
 }
 
+/* numbers */
+
 .numbers {
 	display: grid;
-	grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+	grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
 }
 
 .number {
@@ -54,11 +61,6 @@ body {
 	text-align: center;
 }
 
-.bottom-row {
-	display: grid;
-	grid-template-columns: auto 50px;
-}
-
 .zero {
 	grid-area: 4 / 1 / 4 / 3;
 }
@@ -66,6 +68,8 @@ body {
 .dot {
 	grid-column-start: 3;
 }
+
+/* commands */
 
 .commands {
 	width: 50px;
