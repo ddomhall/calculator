@@ -1,26 +1,45 @@
 const keys = document.querySelector(`.keys`);
 const screen = document.querySelector(`.screen`);
+const history = document.querySelector(`.history`);
 let sum = [];
+// const LocSto = [];
 
 const update = function (text) {
-	screen.textContent = text;
+	screen.textContent = text.join(``);
 };
 
 keys.addEventListener(`click`, function (e) {
-	// e.preventDefault();
-	if (e.target.className.split(` `)[0] !== `command`) {
-		sum.push(e.target.textContent);
+	// prevents refresh
+	e.preventDefault();
 
-		update(sum.join(``));
-	} else if (e.target.textContent === `AC`) {
+	// assigns click target
+	const target = e.target;
+
+	// if target isn't a command, adds to sum and screen
+	if (target.className.split(` `)[0] !== `command`) {
+		sum.push(target.textContent);
+
+		update(sum);
+
+		// if target is `AC`, deletes sum
+	} else if (target.textContent === `AC`) {
 		sum = [];
-		update(sum.join(``));
-	} else if (e.target.textContent === `C`) {
+		update(sum);
+
+		// if target is `C`, deletes last character
+	} else if (target.textContent === `C`) {
 		sum.pop();
-		update(sum.join(``));
-	} else if (e.target.textContent === `=`) {
-		const result = eval(sum.join(``));
-		update(result);
+		update(sum);
+	} else if (target.textContent === `=`) {
+		const result = eval(sum.join(``)).toString();
+		history.insertAdjacentHTML(`beforeend`, `<div class="item">${sum.join(``)}=${result}<button class="del">X</button></div>`);
 		sum = [result];
+		update(sum);
 	}
+});
+
+history.addEventListener(`click`, function (e) {
+	e.preventDefault();
+	if (e.target.textContent !== `clear history`) sum = e.target.textContent.split(`X`)[0].split(`=`)[1].split(``);
+	update(sum);
 });

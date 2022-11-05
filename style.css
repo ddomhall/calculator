@@ -1,5 +1,8 @@
 * {
 	box-sizing: border-box;
+}
+
+div {
 	outline: 1px solid;
 }
 
@@ -89,4 +92,26 @@ body {
 .equals {
 	height: 100px;
 	line-height: 100px;
+}
+
+/* history */
+.item {
+	font-size: 35px;
+	line-height: 50px;
+	text-align: center;
+	height: auto;
+	overflow: auto;
+}
+
+.clear {
+	width: 200px;
+	height: 50px;
+	font-size: 30px;
+}
+
+.del {
+	float: right;
+	margin: 10px 10px 0px 0px;
+	height: 30px;
+	width: 30px;
 }
